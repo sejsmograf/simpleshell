@@ -8,10 +8,12 @@ void handle_input(const std::string &input) {
 void print_prompt() { std::cout << "$ "; }
 
 void main_loop() {
-  print_prompt();
-  std::string input;
-  std::getline(std::cin, input);
-  handle_input(input);
+  while (true) {
+    print_prompt();
+    std::string input;
+    std::getline(std::cin, input);
+    handle_input(input);
+  }
 }
 
 void setup() {
@@ -21,5 +23,6 @@ void setup() {
 
 int main() {
   setup();
+  main_loop();
   return 0;
 }
